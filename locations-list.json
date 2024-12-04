@@ -1,0 +1,122 @@
+{
+   "locations": [
+    {
+      "__type__": "Location",
+      "name": "main road",
+      "description": "This is a regular road used by local residents travelling from the Storrige village to the fields and a nearby forest.",
+      "exits": {
+         "n": 1,
+         "s": 2,
+         "w": 10,
+         "e": 11
+      },
+      "preposition": "on"
+   },
+   {
+      "__type__": "Location",
+      "name": "forest",
+      "description": "It is a nice, green forest, full of mashroom and berries.",
+      "exits": {
+         "s": 0,
+         "n": 3
+      },
+      "preposition": "in"
+   },
+    {
+      "__type__": "Location",
+      "name": "Storrige village",
+      "description": "Small but lovely village. Full of happy people.",
+      "exits": {
+         "n": 0
+      },
+      "preposition": "in"
+   },
+   {
+      "__type__": "Location",
+      "name": "meadow",
+      "description": "Beautiful meadow in the middle of the forest.",
+      "exits": {
+         "s": 1,
+         "n": 5,
+         "e": 4
+      },
+      "preposition": "on"
+   },
+   {
+      "__type__": "Location",
+      "name": "deep forest",
+      "description": "It is really dark here.",
+      "exits": {
+         "w": 3
+      },
+      "preposition": "in"
+   },
+   {
+      "__type__": "Location",
+      "name": "forest",
+      "description": null,
+      "exits": {
+         "s": 3,
+         "n": 6
+      },
+      "preposition": "in"
+   },
+   {
+      "__type__": "Location",
+      "name": "lake",
+      "description": null,
+      "exits": {
+         "s": 5,
+         "e": 7
+      },
+      "preposition": "at"
+   },
+   {
+      "__type__": "Location",
+      "name": "road",
+      "description": null,
+      "exits": {
+         "w": 6,
+         "e": 8
+      },
+      "preposition": "on"
+   },
+   {
+      "__type__": "Location",
+      "name": "road",
+      "description": null,
+      "exits": {
+         "w": 7,
+         "e": 9
+      },
+      "preposition": "on"
+   },
+   {
+      "__type__": "Location",
+      "name": "mountains",
+      "description": null,
+      "exits": {
+         "w": 8
+      },
+      "preposition": "in"
+   },
+   {
+      "__type__": "Location",
+      "name": "wheat fields",
+      "description": "Golden ears of wheat shimmer in the sun.",
+      "exits": {
+         "e": 0
+      },
+      "preposition": "in"
+   },
+   {
+      "__type__": "Location",
+      "name": "rye fields",
+      "description": "The view is relaxing. You can hear the lark singing.",
+      "exits": {
+         "w": 0
+      },
+      "preposition": "in"
+   }
+]      
+}
