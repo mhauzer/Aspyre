@@ -14,7 +14,7 @@
    "1": {
       "__type__": "Location",
       "name": "forest",
-      "description": "It is a nice, green forest, full of mashroom and berries.",
+      "description": "It is a nice, green forest, full of mushroom and berries.",
       "exits": {
          "s": 0,
          "n": 3
