@@ -1,28 +1,11 @@
 from aspyreengine import *
 from narrator import Narrator
+from console import Console
 
 # https://reqbin.com/code/python/pbokf3iz/python-json-dumps-example
 
 debug = False
 dev = True
-
-class Console:
-    __messages = []
-
-    def add_message(self, message):
-        self.__messages.append(message)
-
-    def get_message(self, prompt):
-        return input(prompt)
-
-    def print_messages(self):
-        for m in self.__messages:
-            print(m)
-        self.__messages = []
-
-    def print(self, message):
-        self.add_message(message)
-        self.print_messages()
 
 class Game:
     __LOCATIONS_FILE_NAME = 'locations.json'
@@ -40,35 +23,39 @@ class Game:
         self.console.add_message("")
 
     def set_name(self):
-        while len(self.engine.player.name) == 0:            
-            self.engine.player.name = self.console.get_message("What is your name? ").strip()
-            self.console.print("")
+        player = self.engine.get_player()
+        while len(player.name) == 0:            
+            player.name = self.console.get_message("What is your name? ").strip()
+            self.console.add_message("")
+            self.console.flush()
 
     def main_loop(self):
         end = False
+        player = self.engine.get_player()
 
         while not end:
-            if self.engine.player.location_changed:
-                location = self.engine.get_object_location(self.engine.player)
+            if player.location_changed:
+                location = self.engine.get_object_location(player)
                 self.console.add_message(self.narrator.get_location_msg(location, detailed = True))
                 self.console.add_message("")
                 self.console.add_message(self.narrator.get_location_exits_msg(location, self.engine.get_locations()))
-                self.engine.player.location_changed = False
+                player.location_changed = False
 
             self.console.add_message("")
-            self.console.print_messages()
+            self.console.flush()
             
-            command = input(">")            
+            command = self.console.get_message(">")            
             self.console.add_message("")
-            self.console.print_messages()
+            self.console.flush()
     
             match(command.split()):
-                case ["s"] | ["w"] | ["e"] | ["n"]: self.console.add_message(self.narrator.move_player(command, self.engine.move_object(self.engine.player, command)))
+                case ["s"] | ["w"] | ["e"] | ["n"]: self.console.add_message(self.narrator.move_player(command, self.engine.move_object(player, command)))
                 case "go", y: self.console.add_message(self.narrator.move_player(y, self.engine.move_player(y)))
                 case "go", "to", y: self.console.add_message(self.narrator.move_player(y, self.engine.move_player(y)))
-                case "kill", x: self.console.add_message(self.narrator.kill(self.kill(x)))
-                case "kill", "a" | "the", x: self.console.add_message(self.narrator.kill(self.kill(x)))
-                case "where", "am", "i": self.engine.player.location_changed = True
+                case "kill", x: self.console.add_message(self.narrator.kill(player.kill(x)))
+                case "kill", "a" | "the", x: self.console.add_message(self.narrator.kill(player.kill(x)))
+                case "where", "am", "i": player.location_changed = True
+                case "who", "am", "i": self.console.add_message(self.narrator.introduce(player.name))
                 case ["wait"]: self.console.add_message(self.narrator.wait())
                 case ["quit"] | ["q"]: end = True
                 case _: self.console.add_message(self.narrator.unknown_command(command))
@@ -76,13 +63,14 @@ class Game:
     def run(self):
         self.engine.load_resources(self.__LOCATIONS_FILE_NAME)
         self.intro()
+        player = self.engine.get_player()
 
         if not dev:
-            self.set_name()
+            self.set_name(player)
         else:
-            self.engine.player.name = 'Michał'
+            player.name = 'Michał'
 
-        self.console.add_message(self.narrator.get_hello_msg(self.engine.player.name))
+        self.console.add_message(self.narrator.get_hello_msg(player.name))
         self.console.add_message("")
 
         self.main_loop()
@@ -90,8 +78,8 @@ class Game:
         if self.engine.resources_changed:
             self.engine.save_resources(self.__LOCATIONS_FILE_NAME)
 
-        self.console.add_message(self.narrator.get_goodbye_msg(self.engine.player.name))
-        self.console.print_messages()        
+        self.console.add_message(self.narrator.get_goodbye_msg(player.name))
+        self.console.flush()        
 
 def main():                
     game = Game()

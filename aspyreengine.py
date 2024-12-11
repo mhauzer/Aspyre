@@ -9,6 +9,9 @@ class Creature:
         self.location_id = location_id
         self.location_changed = location_changed
 
+    def kill(self, target):
+        return target
+
 class Location:    
     def __init__(self, name, description, exits, preposition):
         self.name = name
@@ -50,6 +53,9 @@ class WorldEngine:
     
     def get_locations(self):
         return self.__locations
+    
+    def get_player(self):
+        return self.player
             
 class LocationEncoder(json.JSONEncoder):
     def default(self, obj):

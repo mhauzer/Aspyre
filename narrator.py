@@ -1,4 +1,4 @@
-class Narrator:
+class WorldDirections:
     __world_directions = {
         "n": "North",
         "s": "South",
@@ -6,9 +6,13 @@ class Narrator:
         "w": "West"
     }
 
-    def is_world_direction(self, direction):
-        return direction in self.__world_directions
+    def is_world_direction(direction):
+        return direction in WorldDirections.__world_directions
+    
+    def get_full_name(short_name):
+        return WorldDirections.__world_directions[short_name]
 
+class Narrator:
     def get_hello_msg(self, name):
         return f"Hello, {name}!"
 
@@ -25,8 +29,8 @@ class Narrator:
         msg = ""
         if (len(location.exits)):
             msg = msg + f"You can see:"
-            for loc in location.exits:
-                msg = msg + f"\n   - {locations[location.exits[loc]].name} to the {self.__world_directions[loc]}"
+            for short_name in location.exits:
+                msg = msg + f"\n   - {locations[location.exits[short_name]].name} to the {WorldDirections.get_full_name(short_name)}"
         else:
             msg = msg + f"There are no exits from {location.name}"
         return msg
@@ -36,15 +40,18 @@ class Narrator:
     
     def move_player(self, direction, result):        
         if (result):
-            return f"You go {self.__world_directions[direction]}"
+            return f"You go {WorldDirections.get_full_name(direction)}"
         else:
-            return f"You cannot go {self.__world_directions[direction]}"
+            return f"You cannot go {WorldDirections.get_full_name(direction)}"
     
     def kill(self, something):
         if (something == "yourself"):
             return "Don't do that! :-0"
         else:
             return f"You are trying to kill a {something} but there's no {something} to kill"
+        
+    def introduce(self, name):
+        return f"Your are {name}"
 
     def unknown_command(self, command):
         return f"I don't know how to {command}"
