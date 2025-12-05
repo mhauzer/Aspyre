@@ -1,3 +1,29 @@
 {
-
+	"0": {
+		"species": "wolf",
+		"name": "Gray Wolf",
+		"description": "A lean, hungry wolf with keen yellow eyes.",
+		"health": 30,
+		"strength": 8,
+		"location_id": 4,
+		"location_changed": false
+	},
+	"1": {
+		"species": "goblin",
+		"name": "Scrag",
+		"description": "A small, sneering goblin searching for shiny things.",
+		"health": 18,
+		"strength": 5,
+		"location_id": 3,
+		"location_changed": false
+	},
+	"2": {
+		"species": "bear",
+		"name": "Forest Bear",
+		"description": "A large brown bear that guards the deeper woods.",
+		"health": 60,
+		"strength": 14,
+		"location_id": 4,
+		"location_changed": false
+	}
 }

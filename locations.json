@@ -46,7 +46,8 @@
       "name": "deep forest",
       "description": "It is really dark here.",
       "exits": {
-         "w": 3
+         "w": 3,
+         "n": 31
       },
       "preposition": "in"
    },
@@ -95,7 +96,8 @@
       "name": "mountains",
       "description": null,
       "exits": {
-         "w": 8
+         "w": 8,
+         "n": 30
       },
       "preposition": "in"
    },
@@ -113,7 +115,209 @@
       "name": "rye fields",
       "description": "The view is relaxing. You can hear the lark singing.",
       "exits": {
-         "w": 0
+         "w": 0,
+         "n": 12
+      },
+      "preposition": "in"
+   },
+   "12": {
+      "__type__": "Location",
+      "name": "ancient ruins",
+      "description": "Crumbling stone structures hint at a forgotten civilization.",
+      "exits": {
+         "s": 11,
+         "e": 13,
+         "n": 15
+      },
+      "preposition": "in"
+   },
+   "13": {
+      "__type__": "Location",
+      "name": "mossy cave",
+      "description": "A damp cave with glowing moss illuminating the walls.",
+      "exits": {
+         "w": 12,
+         "s": 14
+      },
+      "preposition": "in"
+   },
+   "14": {
+      "__type__": "Location",
+      "name": "underground stream",
+      "description": "A crystal-clear stream flows through the cavern below.",
+      "exits": {
+         "n": 13,
+         "e": 16
+      },
+      "preposition": "by"
+   },
+   "15": {
+      "__type__": "Location",
+      "name": "stone bridge",
+      "description": "A sturdy bridge spans a wide chasm, ancient but still solid.",
+      "exits": {
+         "s": 12,
+         "n": 17
+      },
+      "preposition": "on"
+   },
+   "16": {
+      "__type__": "Location",
+      "name": "crystal cavern",
+      "description": "Huge crystals jut from every surface, refracting light into rainbow patterns.",
+      "exits": {
+         "w": 14,
+         "n": 18
+      },
+      "preposition": "in"
+   },
+   "17": {
+      "__type__": "Location",
+      "name": "cliff overlook",
+      "description": "You stand atop a high cliff with a breathtaking view of the valley below.",
+      "exits": {
+         "s": 15,
+         "e": 19
+      },
+      "preposition": "on"
+   },
+   "18": {
+      "__type__": "Location",
+      "name": "dragon's lair",
+      "description": "A vast cavern smells of sulfur and ash. Gold glints in the darkness.",
+      "exits": {
+         "s": 16,
+         "w": 20
+      },
+      "preposition": "in"
+   },
+   "19": {
+      "__type__": "Location",
+      "name": "watchtower",
+      "description": "An ancient tower with views stretching for miles in every direction.",
+      "exits": {
+         "w": 17,
+         "n": 21
+      },
+      "preposition": "in"
+   },
+   "20": {
+      "__type__": "Location",
+      "name": "volcanic crater",
+      "description": "Steam rises from deep within this massive crater; the ground is warm beneath your feet.",
+      "exits": {
+         "e": 18,
+         "s": 22
+      },
+      "preposition": "in"
+   },
+   "21": {
+      "__type__": "Location",
+      "name": "hidden temple",
+      "description": "A magnificent temple carved into solid rock, covered in intricate carvings.",
+      "exits": {
+         "s": 19,
+         "w": 23
+      },
+      "preposition": "in"
+   },
+   "22": {
+      "__type__": "Location",
+      "name": "lava fields",
+      "description": "Hardened lava flows create a maze of twisted stone formations.",
+      "exits": {
+         "n": 20,
+         "e": 24
+      },
+      "preposition": "in"
+   },
+   "23": {
+      "__type__": "Location",
+      "name": "sanctuary",
+      "description": "A peaceful place of sanctuary surrounded by ancient oaks and glowing flowers.",
+      "exits": {
+         "e": 21,
+         "s": 25
+      },
+      "preposition": "in"
+   },
+   "24": {
+      "__type__": "Location",
+      "name": "desert oasis",
+      "description": "A shimmering pool of water surrounded by palm trees offers respite from the harsh desert.",
+      "exits": {
+         "w": 22,
+         "n": 26
+      },
+      "preposition": "at"
+   },
+   "25": {
+      "__type__": "Location",
+      "name": "misty swamp",
+      "description": "Fog swirls above murky water. Strange sounds echo in the darkness.",
+      "exits": {
+         "n": 23,
+         "e": 27
+      },
+      "preposition": "in"
+   },
+   "26": {
+      "__type__": "Location",
+      "name": "vast desert",
+      "description": "Miles of golden sand stretch to the horizon under a blazing sun.",
+      "exits": {
+         "s": 24,
+         "e": 28
+      },
+      "preposition": "in"
+   },
+   "27": {
+      "__type__": "Location",
+      "name": "ancient library",
+      "description": "Shelves carved into stone walls hold scrolls and tomes of forgotten knowledge.",
+      "exits": {
+         "w": 25,
+         "n": 29
+      },
+      "preposition": "in"
+   },
+   "28": {
+      "__type__": "Location",
+      "name": "sunken city",
+      "description": "Crumbling buildings rise from sand like monuments to a lost age.",
+      "exits": {
+         "w": 26,
+         "n": 30
+      },
+      "preposition": "in"
+   },
+   "29": {
+      "__type__": "Location",
+      "name": "enchanted forest",
+      "description": "Trees glow with an ethereal light, and the air tingles with magic.",
+      "exits": {
+         "s": 27,
+         "e": 31
+      },
+      "preposition": "in"
+   },
+   "30": {
+      "__type__": "Location",
+      "name": "starlit plaza",
+      "description": "An open square with ancient stones arranged in celestial patterns.",
+      "exits": {
+         "w": 28,
+         "s": 9
+      },
+      "preposition": "on"
+   },
+   "31": {
+      "__type__": "Location",
+      "name": "moonlit grove",
+      "description": "Silver moonlight filters through ancient trees, illuminating a circle of standing stones.",
+      "exits": {
+         "w": 29,
+         "s": 4
       },
       "preposition": "in"
    }      

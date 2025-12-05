@@ -1,3 +1,84 @@
 {
-    
+	"0": {
+		"name": "Rusty Sword",
+		"type": "weapon",
+		"description": "An old sword with a nicked blade. Usable but unreliable.",
+		"value": 5,
+		"weight": 4.0,
+		"damage": 6
+	},
+	"1": {
+		"name": "Small Shield",
+		"type": "armor",
+		"description": "A wooden shield reinforced with iron bands.",
+		"value": 4,
+		"weight": 3.0,
+		"defense": 2
+	},
+	"2": {
+		"name": "Healing Herb",
+		"type": "consumable",
+		"description": "A green leaf that soothes wounds when chewed.",
+		"value": 3,
+		"weight": 0.1,
+		"heal": 10,
+		"stackable": true
+	},
+	"3": {
+		"name": "Torch",
+		"type": "tool",
+		"description": "A wooden torch to light dark areas.",
+		"value": 2,
+		"weight": 1.0,
+		"light_duration": 60
+	},
+	"4": {
+		"name": "Leather Armor",
+		"type": "armor",
+		"description": "Simple armor made from stitched leather.",
+		"value": 15,
+		"weight": 8.0,
+		"defense": 4
+	},
+	"5": {
+		"name": "Iron Dagger",
+		"type": "weapon",
+		"description": "A short, sharp dagger good for close fights.",
+		"value": 8,
+		"weight": 1.5,
+		"damage": 4
+	},
+	"6": {
+		"name": "Gold Coin",
+		"type": "currency",
+		"description": "A small coin stamped with the king's face.",
+		"value": 1,
+		"weight": 0.01,
+		"stackable": true
+	},
+	"7": {
+		"name": "Traveler's Ration",
+		"type": "consumable",
+		"description": "Dried meat and bread to restore energy on the road.",
+		"value": 2,
+		"weight": 0.5,
+		"heal": 5,
+		"stackable": true
+	},
+	"8": {
+		"name": "Magic Crystal",
+		"type": "misc",
+		"description": "A faintly glowing crystal that hums softly.",
+		"value": 50,
+		"weight": 0.5
+	},
+	"9": {
+		"name": "Hunting Bow",
+		"type": "weapon",
+		"description": "A simple bow for hunting small game.",
+		"value": 20,
+		"weight": 3.0,
+		"damage": 5,
+		"ammo_type": "arrow"
+	}
 }

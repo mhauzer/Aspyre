@@ -1,0 +1,58 @@
+                   STARLIT PLAZA (30)
+                           |
+                    MOUNTAINS (9)
+                           |
+                      ROAD (8)
+                           |
+                      ROAD (7)
+                           |
+                      LAKE (6)
+                           |
+                      FOREST (5)
+                           |
+                      FOREST (1)
+                           |
+        WHEAT FIELDS (10)---MAIN ROAD (0)---RYE FIELDS (11)
+                           |                     |
+                    STORRIGE VILLAGE (2)  ANCIENT RUINS (12)
+                                              |
+                         HIDDEN TEMPLE (21)---STONE BRIDGE (15)
+                              |                     |
+                      WATCHTOWER (19)    CLIFF OVERLOOK (17)
+                              |
+                      STARLIT PLAZA (30)
+
+                   MEADOW (3)---DEEP FOREST (4)---MOONLIT GROVE (31)
+                                                         |
+                                           ENCHANTED FOREST (29)
+                                                         |
+                                           ANCIENT LIBRARY (27)
+                                                         |
+                                            MISTY SWAMP (25)
+                                                         |
+                                            SANCTUARY (23)
+
+        DRAGON'S LAIR (18)---CRYSTAL CAVERN (16)
+               |                  |
+        VOLCANIC CRATER (20)  UNDERGROUND STREAM (14)
+               |                  |
+        LAVA FIELDS (22)      MOSSY CAVE (13)
+               |
+        DESERT OASIS (24)
+               |
+        VAST DESERT (26)
+               |
+        SUNKEN CITY (28)
+
+COMPASS:
+   NORTH (↑)
+   |
+   +----EAST (→)
+
+Legend:
+- Vertical connections (|): north-south routes
+- Horizontal connections (---): east-west routes
+- Main hub: MAIN ROAD (0)
+- Northern frontier: Moonlit Grove leads to Enchanted Forest and Ancient Library
+- Eastern frontier: Mountains and Starlit Plaza in the northeast
+- Western frontier: Dragon's Lair, Volcano, Lava Fields, Desert chain in the west
