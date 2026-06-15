@@ -2,9 +2,11 @@ import json
 import random
 
 class Creature:
-    def __init__(self, species, name, health, strength, location_id, location_changed = False):
+    def __init__(self, species, name, health, strength, location_id, location_changed=False, description="", creature_id=None):
+        self.id = creature_id
         self.species = species
         self.name = name
+        self.description = description
         self.health = health
         self.max_health = health
         self.strength = strength
@@ -85,15 +87,51 @@ class WorldEngine:
 
         self.__creatures = {}
         for k, v in creatures.items():
-            # v expected to be a dict with keys matching Creature constructor
-            self.__creatures[k] = Creature(
-                v.get('species'),
-                v.get('name'),
-                v.get('health'),
-                v.get('strength'),
-                v.get('location_id'),
-                v.get('location_changed', False)
-            )
+            # Parse JSON creature entries into in-memory Creature objects.
+            self.__creatures[k] = self._parse_creature(k, v)
+
+    def _parse_creature(self, creature_id, raw):
+        species = str(raw.get('species', 'creature')).strip() if isinstance(raw, dict) else 'creature'
+        if not species:
+            species = 'creature'
+
+        name = str(raw.get('name', species.title())).strip() if isinstance(raw, dict) else species.title()
+        if not name:
+            name = species.title()
+
+        description = ''
+        if isinstance(raw, dict):
+            description = str(raw.get('description', '')).strip()
+
+        health = self._to_int(raw.get('health') if isinstance(raw, dict) else None, 10)
+        strength = self._to_int(raw.get('strength') if isinstance(raw, dict) else None, 1)
+        location_id = self._to_int(raw.get('location_id') if isinstance(raw, dict) else None, 0)
+
+        location_changed_raw = raw.get('location_changed', False) if isinstance(raw, dict) else False
+        if isinstance(location_changed_raw, bool):
+            location_changed = location_changed_raw
+        else:
+            location_changed = str(location_changed_raw).strip().lower() in {'1', 'true', 'yes'}
+
+        return Creature(
+            species=species,
+            name=name,
+            health=max(1, health),
+            strength=max(1, strength),
+            location_id=location_id,
+            location_changed=location_changed,
+            description=description,
+            creature_id=creature_id
+        )
+
+    def _to_int(self, value, default):
+        try:
+            return int(value)
+        except (TypeError, ValueError):
+            return default
+
+    def get_creature(self, creature_id):
+        return self.__creatures.get(str(creature_id))
 
     def load_items(self, filename):
         with open(filename, 'r') as f:

@@ -1,6 +1,6 @@
 # TODO
 
-- [ ] Integrate creature loading/parsing into the engine (if you want creatures instantiated as Creature objects).
+- [x] Integrate creature loading/parsing into the engine (if you want creatures instantiated as Creature objects).
 - [ ] Add loot/items and connect to items.json.
 - [ ] Place creatures at different location_id values or add more creatures.
 - [ ] instantiate these creatures in the engine now,
